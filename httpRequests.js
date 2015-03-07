@@ -24,7 +24,6 @@ function httpRequests(requests, callback) {
 		xhr.withCredentials = request.withCredentials || false;
 		xhr.onload = request.onload;
 		xhr.onloadend = function () {
-			numRequestsCompleted += 1;
 			responses.push({
 				url: request.url,
 				response: xhr.response,
@@ -38,6 +37,8 @@ function httpRequests(requests, callback) {
 				status: xhr.status,
 				statusText: xhr.statusText
 			});
+
+			numRequestsCompleted += 1;
 			
 			if (allRequestsCompleted()) {
 				callback(responses);
