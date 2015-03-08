@@ -16,4 +16,4 @@ A complete example is [here](//cmweiss.github.io/httpRequests/httpRequests.html)
 
 Typically when the results of two `XMLHttpRequest`s are need the callback (generally the `onload` event) of the first request is use to make the second request and the callback of the second request is used to complete the task of processing the two results. Alternatively, the promise pattern is used similarly. Both techniques serialize the requests, i.e. one request is made, when it completes the other request is made, when that completes then processing continues. `httpRequests` allows for parallel requests and a single callback which gets passed an array of all of the results. This is more performant and simplifies the code.
 
-Caveat: the order of the results in the retuned results array is the order in which the results are completed, not the order in which the requests are made.
+Caveat: the order of the results in the returned results array is the order in which the results are completed, not the order in which the requests are made.
